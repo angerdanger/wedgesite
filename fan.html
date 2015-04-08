@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>Arrow Keys and Cursor</title>
+<link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+<style type="text/css">
+	body{
+		padding: 0;
+		margin: 0;
+	}
+	#number{
+		position: absolute;
+		bottom: 0px;
+		left: 50%;
+		height:250px;
+		width:250px;
+		transform:translateX(-50%);
+  		-webkit-transform:translateX(-50%);
+  		-moz-transform:translateX(-50%);
+  		text-align: center;
+		line-height: 250px;
+		font-family: 'EB Garamond', serif;
+		font-size: 200px;
+		z-index: -100;
+	}
+</style>
+<script type="text/javascript">
+
+var ctx, canvas, centerX, centerY, selectedType = 0, x, y, offCenter = 0, jump = 5, rad;
+var compositeTypes = ['source-over','destination-over','source-out','lighter','darker','xor'];
+var ribbon = new Image;
+ribbon.src = "Ribbon.png";
+
+window.onload = function()
+{
+  canvas = document.getElementById('fun');
+  canvas.addEventListener("mousemove", mouse, false);
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+  ctx = canvas.getContext('2d');
+  centerX = canvas.width/2;
+  centerY = canvas.height/2
+}
+
+document.onkeydown = function(e)
+{
+	if (e.keyCode == '38') // up
+	{
+		if (selectedType == 0)
+			selectedType = compositeTypes.length-1;
+		else
+			selectedType--;
+	}
+	else if (e.keyCode == '40') // down
+	{
+		if (selectedType == compositeTypes.length-1)
+			selectedType = 0;
+		else
+			selectedType++;
+	}
+	else if (e.keyCode == '37') // left
+		offCenter-=jump;
+	else if (e.keyCode == '39') // right
+		offCenter+=jump;
+	move(x,y);
+}
+
+function mouse(e)
+{
+  x = e.clientX - centerX;
+  y = e.clientY - centerY;
+  move();
+}
+
+function move()
+{
+  ctx.save();
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.translate(centerX, centerY);
+  ctx.globalCompositeOperation = compositeTypes[selectedType];
+  rad = Math.atan(y/x);
+  if (x < 0)
+  	rad+=Math.PI;
+  else if (y < 0)
+  	rad+=Math.PI*2;
+  var months = rad/2/Math.PI*12;
+  rad/=10;
+  ctx.rotate(Math.PI/2);
+  for (var i = 0; i < 11; i++)
+  {
+  	ctx.drawImage(ribbon,-ribbon.width/2+offCenter,-ribbon.height+1);
+  	ctx.rotate(rad);
+  }
+  ctx.restore();
+
+  document.getElementById("number").innerHTML = "" + Math.floor(months);
+}
+
+</script>
+</head>
+
+<body>
+
+<canvas id="fun"></canvas>
+<div id="number"></div>
+
+</body>
