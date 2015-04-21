@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Just like pappy used to make 'em!</title>
+<link href="prog.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+	function home()
+	{
+		window.location = "index.html";
+	}
+	function paper()
+	{
+		window.location = "paper.html";
+	}
+</script>
+</head>
+<body>
+
+<div id="body"></div>
+
+<a href="index.html"><div id="title">
+	<img src="resources/dotstitle.png">
+</div></a>
+
+<div id="navigation" style="width:100%">
+
+	<a href="draw.html"><div id="drawings">drawings</div></a>
+	<a href="video.html"><div id="videos">videos</div></a>
+	<a href="graphics.html"><div id="graphics">graphics</div></a>
+	<a href="prog.html"><div id="programming">programming</div></a>
+	<a href="about.html"><div id="about">about</div></a>
+
+</div>
+	
+<div id="chamber"><center><img src="resources/sample.gif"></center><p>As the first programming project uploaded to angerdanger, jDots is essentially my tribute to <a href="http://www.google.com/logos/particle.html">a Google homepage, which featured rich HTML5 content.</a> The most competent port I've seen of this homepage can be found <a href="http://dotty-dots.appspot.com">here.</a> Unlike Google's version, mine was made in Java instead of JavaScript, grants the user the ability to place dots wherever they want, only shows colors along a predesignated spectrum of blue, and lacks <i>a lot</i> of quality. The reason for the latter is that while Google (and the other port I linked) feature accurate, rudimentary physics, I sort of&hellip; cheated. I mean, come on, programming is hard! Without viewing the original source code, it's hard to say exactly what I did differently, but the end result seems to be dots that are less bouncy, fluid, resource efficient, and fun. Anyway, the controls are simple: click to create a dot, drag to create a stream of dots, and hold the spacebar to invert the gravity of the cursor. I had actually wanted to make tribute to Google's homepage ever since I first saw it, but I lacked the skills and had no idea where to begin; I couldn't figure out how to recreate the motion of the colorful dots. They all seem to take a circular path to avoid the user's cursor, and although I could recite the trigonometric unit circle like nobody's business, I didn't understand how to change dot position as a function of the cursor's proximity. A couple years (and one programming class) later, I found myself wanting to impress somebody, so I approached this problem once again. I ended up wracking my brain and realizing that I was complicating everything; the bare-boned physics is relatively simple:<p>
+<center><img src="resources/simple.png"></center><p>
+Force 'a' is a number that gets higher when a dot gets near the cursor, and force 'b' is a number that gets higher when the dot is moved from its origin (red x). These forces work against each other; 'a' pushes and 'b' pulls. If both forces are added together and push in <i>almost</i> opposite directions, the resulting net force is a <i>tiny</i> force that pushes the dot towards the path of least resistance: a position where the pull of each force is almost equal. But as it approaches that position, the distances change, and it ultimately moves closer to its origin. So the point of least resistance is recalculated, and by doing so in rapid succession, the dot's path becomes a circle without the geometry of a circle ever coming into play.<&#47;physicsrambling>
+<p>
+Anyway, on an unrelated note, the program once went through an iteration where it looked like a shooting star. This was accomplished by setting the background to black, the dot colors to white, the size to zero (the dots increase in size when they're moved from their origins, so the size zero dots do become visible once approached by the cursor), and by holding the spacebar.<p>
+<center><img src="resources/scrubbingpower.png"></center><p>
+Ok, I suppose it looks more like a demonstration of the scrubbing bubbles power Mr. Clean&#174; detergent, but I think it's neat. For your downloading pleasure, I've uploaded both the <a href="resources/jdots.jar">original</a> and <a href="resources/bubbly.jar">bubbly</a> versions of jDots. Enjoy.</div>
+
+</body>

@@ -1,0 +1,190 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body{
+margin: 0;
+padding: 0;
+font-family:Arial, Helvetica, sans-serif;
+font-size: 18px;
+}
+
+a{
+	text-decoration: none;
+	color: rgb(0,113,255);
+}
+a:hover{
+	text-decoration: underline;
+}
+
+#title{
+	width:-webkit-calc(50% + 223px);
+	width:-moz-calc(50% + 223px);
+	height:176;
+	margin:auto;
+	padding-left: -webkit-calc(50% - 223px);
+	padding-left: -moz-calc(50% - 223px);
+	padding-top: 12px;
+	padding-bottom: 12px;
+	background:#FFF;
+	postion:relative;
+	/*box-shadow: 0px 0px 15px #000;*/
+}
+#title:hover{
+	opacity:.5;
+}
+#body{
+	z-index:-1;
+	width:100%;
+	height:100%;
+	position: fixed;
+	/*float: left;*/
+	background: -webkit-linear-gradient(#C17600, #FF9A03);
+	background: -moz-linear-gradient(#C17600, #FF9A03);
+}
+
+.chamber
+{
+	margin: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	width:580px;
+	padding:10px;
+	box-shadow: 0px 0px 15px #000;
+	border-radius: 10px 10px 10px 10px;
+	overflow: hidden;
+	background-color: #fff;
+}
+
+#picholder{
+	width:390px;
+	height:471px;
+	position: fixed;
+	box-shadow: 0px 0px 15px #000;
+	border-radius: 10px 10px 10px 10px;
+	overflow: hidden;
+}
+
+/* HERE IS THE NAVIGIATION! AHAHAHAHAHAHAHAHAHAHA */
+
+#navigation a{
+	color: #fff;
+}
+
+#navigation{
+	height: 50px;
+	left:10%;
+	background-color: #fff;
+
+	cursor:default; /*prevents text-selection cursor when hovering*/
+	text-align: center;
+	line-height: 50px;
+	vertical-align:middle;
+	font-size: 18px;
+	color: #fff;
+	text-shadow: 0px 0px 2px #000; 
+}
+
+#about{
+	width: 20%;
+	height: inherit;
+	background:-webkit-linear-gradient(#07CE00, #037900);
+	background:-moz-linear-gradient(#07CE00, #037900);
+	background-position:center;
+	background-repeat: no-repeat;
+	float: left;
+	-webkit-box-shadow: inset 0 0 15px 0px #013700;
+	box-shadow: inset 0 0 15px 0px #013700;
+}
+#about:active{
+	background:-webkit-linear-gradient(#037900, #07CE00);
+	background:-moz-linear-gradient(#037900, #07CE00);
+	background-position:center;
+	background-repeat: no-repeat;
+}
+#about:hover{
+	opacity: .75;
+}
+
+#programming{
+	width: 20%;
+	height: inherit;
+	background:-webkit-linear-gradient(rgb(0,165,225),rgb(0,114,172));
+	background:-moz-linear-gradient(rgb(0,165,225),rgb(0,114,172));
+	background-position:center;
+	background-repeat: no-repeat;
+	float: left;
+	-webkit-box-shadow: inset 0 0 15px 0px rgb(0,33,77);
+	box-shadow: inset 0 0 15px 0px rgb(0,33,77);
+}
+#programming:active{
+	background:-webkit-linear-gradient(rgb(0,114,172),rgb(0,165,225));
+	background:-moz-linear-gradient(rgb(0,114,172),rgb(0,165,225));
+	background-position:center;
+	background-repeat: no-repeat;
+}
+#programming:hover{
+	opacity: .75;
+}
+
+#graphics{
+	width: 20%;
+	height: inherit;
+	background:-webkit-linear-gradient(#CA66FF, #8700CE);
+	background:-moz-linear-gradient(#CA66FF, #8700CE);
+	background-position:center;
+	background-repeat: no-repeat;
+	float: left;
+	-webkit-box-shadow: inset 0 0 15px 0px #490070;
+	box-shadow: inset 0 0 15px 0px #490070;
+}
+#graphics:active{
+	background:-webkit-linear-gradient(#8700CE, #CA66FF);
+	background:-moz-linear-gradient(#8700CE, #CA66FF);
+	background-position:center;
+	background-repeat: no-repeat;
+}
+#graphics:hover{
+	opacity: .75;
+}
+
+#videos{
+	width: 20%;
+	height: inherit;
+	background:-webkit-linear-gradient(#FF6666, #C10000);
+	background:-moz-linear-gradient(#FF6666, #C10000);
+	background-position:center;
+	background-repeat: no-repeat;
+	float: left;
+	-webkit-box-shadow: inset 0 0 15px 0px #5B0000;
+	box-shadow: inset 0 0 15px 0px #5B0000;
+}
+#videos:active{
+	background:-webkit-linear-gradient(#C10000, #FF6666);
+	background:-moz-linear-gradient(#C10000, #FF6666);
+	background-position:center;
+	background-repeat: no-repeat;
+}
+#videos:hover{
+	opacity: .75;*/
+}
+
+#drawings{
+	width: 20%;
+	height: inherit;
+	background:-webkit-linear-gradient(#FF9A03, #C17600);
+	background:-moz-linear-gradient(#FF9A03, #C17600);
+	background-position:center;
+	background-repeat: no-repeat;
+	float: left;
+	-webkit-box-shadow: inset 0 0 15px 0px #8B5500;
+	box-shadow: inset 0 0 15px 0px #8B5500;
+}
+#drawings:active{
+	background:-webkit-linear-gradient(#C17600, #FF9A03);
+	background:-moz-linear-gradient(#C17600, #FF9A03);
+	background-position:center;
+	background-repeat: no-repeat;
+}
+#drawings:hover{
+	opacity: .75;
+}
